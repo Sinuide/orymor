@@ -5,11 +5,14 @@ import { fileURLToPath } from 'node:url'
 
 import { DEFAULT_LOCALE, VALID_LOCALES } from './src/config.ts'
 
+import netlify from '@astrojs/netlify';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
+
   i18n: {
     defaultLocale: DEFAULT_LOCALE,
     locales: [...VALID_LOCALES],
@@ -17,6 +20,7 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+
   vite: {
     resolve: {
       alias: {
@@ -24,4 +28,6 @@ export default defineConfig({
       },
     },
   },
+
+  adapter: netlify(),
 })
