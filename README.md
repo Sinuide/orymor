@@ -7,7 +7,7 @@ Here are my choices and why:
 
 - Astro: heard a lot about it, used to do some SSG with Gatsby, but really wanted to try it out. Since the test is a product page I didn't want to go full SPA. So it was the obvious choice! Honestly it's a nice tool, but it takes some learning. The API Routes is a really nice feature, prevent any case of CORS issue, and works a bit like edge functions.
 - Zustand: Same here, tried some state management libraries (MobX, Redux, Jotai mostly), this one was next in line. Very nice to use, a bit like Jotai.
-- Bruno: Yep, still the same reason 😁 A bit nicer than postman, with the possibility to add files in the repository and just use it with the correct plugin (added in recommendations for the repository)
+- Bruno: Yep, still the same reason 😁 A bit nicer than postman, with the possibility to add files in the repository and just use it with the correct plugin (added in recommendations for the repository) or add tests on it.
 
 The others are more basic choices.
 
@@ -18,7 +18,7 @@ The others are more basic choices.
 - Native CSS: Aside from mixins, native CSS can now do absolutely anything we need, so no reason to use anything else. And since I actually do like CSS, Tailwind is my nemesis.
 - Responsive: Not much here, the approach is mobile first, with a reponsive grid and a hidden cart.
 
-In general, I tried to add a bit of everything in this project, I did quite a bit of rewriting as I progressed in my exploration of astro. All stores are not equal 😅
+In general, I tried to add a bit of everything in this project, I did quite a bit of rewriting as I progressed in my exploration of astro. All stores are not equal (only products has a separated query, partly due to its need in SSG and Client) 😅
 
 ## What's missing
 
