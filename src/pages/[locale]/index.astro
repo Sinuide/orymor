@@ -1,0 +1,63 @@
+---
+import { VALID_LOCALES, getLocaleOrDefault, getLanguageFromLocale } from 'src/config'
+import { localeStore } from 'src/stores/locale'
+import { Grid } from 'src/ui/molecules/Grid'
+import { Cart } from 'src/ui/organisms/Cart'
+
+import 'src/styles/main.css'
+import { fetchProducts } from 'src/queries/products'
+
+export function getStaticPaths() {
+  return VALID_LOCALES.map((locale) => ({
+    params: { locale },
+  }))
+}
+
+const { locale } = Astro.params
+
+const currentLocale = getLocaleOrDefault(locale)
+const lang = getLanguageFromLocale(currentLocale)
+
+localeStore.setState({ locale })
+
+const products = await fetchProducts()
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Orymor</title>
+  </head>
+  <body>
+    <!-- No client:directive, will be renderer in SSG -->
+    <Grid items={products.map(product => ({
+      id: product.id,
+      content: {
+        name: product.name,
+        description: product.description,
+        price: product.price
+      },
+      picture: {
+        src: product.cover,
+        alt: product.name
+      }
+    }))} />
+
+    <!-- Hydrated client side -->
+    <Cart client:load />
+
+    <!-- Handle card click adding item -->
+    <script type="module">
+      document.querySelectorAll('.card').forEach((el) => {
+        el.addEventListener('click', () => {
+          const id = el.dataset.id
+          window.dispatchEvent(new CustomEvent('cart-add', { detail: { id } }))
+        })
+      })
+    </script>
+  </body>
+</html>
+

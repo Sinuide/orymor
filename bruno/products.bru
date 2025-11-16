@@ -1,0 +1,24 @@
+meta {
+  name: New HTTP Request
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://ae6p34jr9l.execute-api.eu-west-3.amazonaws.com/dev/products
+  body: json
+  auth: none
+}
+
+headers {
+  x-api-key: k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "data": {
+      "products": []
+    }
+  }
+}

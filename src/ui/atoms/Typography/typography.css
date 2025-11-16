@@ -1,0 +1,13 @@
+.typography {
+  font-family: var(--font-family);
+  letter-spacing: var(--letter-spacing);
+  margin: 0;
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+}

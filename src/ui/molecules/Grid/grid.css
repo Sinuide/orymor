@@ -1,0 +1,31 @@
+/* Mobile default */
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+
+  .grid-item {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+  }
+}
+
+/* Tablet + landscape mobile */
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 25%);
+
+    .grid-item.large {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+  }
+}

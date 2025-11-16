@@ -1,0 +1,154 @@
+openapi: 3.0.0
+info:
+  title: test-front-api
+  version: 1.0.0
+servers:
+  - url: https://ae6p34jr9l.execute-api.eu-west-3.amazonaws.com
+tags:
+  - name: basket
+  - name: Products
+paths:
+  /dev/basket/{user_id}:
+    get:
+      tags:
+        - basket
+      summary: Get the cart
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: user_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  products:
+                    bc67b120-6c74-4c92-a4db-4e91931e3b94: 2
+                    87d9431a-785a-4b13-a3fb-d148bb3ac049: 0
+  /dev/basket:
+    post:
+      tags:
+        - basket
+      summary: Create or update the cart
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                data:
+                  user_id: test3
+                  products:
+                    87d9431a-785a-4b13-a3fb-d148bb3ac049: 0
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: updated successfully
+                error: {}
+  /dev/products:
+    post:
+      tags:
+        - Products
+      summary: get all or some products
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                data:
+                  products:
+                    - 2a0409db-cedd-4a92-8744-7aff35b2054d
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  products:
+                    - product_name: Small Wooden Chicken
+                      product_id: 2a0409db-cedd-4a92-8744-7aff35b2054d
+                      product_desc: >-
+                        Dolores corporis amet consequatur neque. Perspiciatis
+                        odio non voluptas id ut. Est magnam possimus est vero
+                        enim.
+                      product_price: 491
+                      picture_path: >-
+                        /product/2a0409db-cedd-4a92-8744-7aff35b2054d/cover_picture
+  /dev/product/{product_id}/cover_picture:
+    get:
+      tags:
+        - Products
+      summary: Get cover picture from product
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: image/jpeg
+        - name: product_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

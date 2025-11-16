@@ -1,0 +1,460 @@
+{
+	"info": {
+		"_postman_id": "6173c3b2-15c4-4e2a-9f27-2f9118e5f185",
+		"name": "test-front-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7812602"
+	},
+	"item": [
+		{
+			"name": "basket",
+			"item": [
+				{
+					"name": "Get the basket",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://ae6p34jr9l.execute-api.eu-west-3.amazonaws.com/dev/basket/{{user_id}}",
+							"protocol": "https",
+							"host": [
+								"ae6p34jr9l",
+								"execute-api",
+								"eu-west-3",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"basket",
+								"{{user_id}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get basket",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://ae6p34jr9l.execute-api.eu-west-3.amazonaws.com/dev/basket/{{user_id}}",
+									"protocol": "https",
+									"host": [
+										"ae6p34jr9l",
+										"execute-api",
+										"eu-west-3",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"dev",
+										"basket",
+										"{{user_id}}"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 15:10:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "f5c2cc2d-85db-4e1c-a70a-02f838155b95"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "WmfRcH1XCGYFooQ="
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-62f278d5-23ab1b0d1180c7d43ac5e9ec;Sampled=0"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"products\": {\n            \"bc67b120-6c74-4c92-a4db-4e91931e3b94\": 2,\n            \"87d9431a-785a-4b13-a3fb-d148bb3ac049\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create or update the basket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\" : {\n\t\t\"user_id\" : \"test3\",\n\t\t\"products\" : {\n\t\t\t\"87d9431a-785a-4b13-a3fb-d148bb3ac049\" : 0\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://ae6p34jr9l.execute-api.eu-west-3.amazonaws.com/dev/basket",
+							"protocol": "https",
+							"host": [
+								"ae6p34jr9l",
+								"execute-api",
+								"eu-west-3",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"basket"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST basket",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"data\" : {\n\t\t\"user_id\" : \"test3\",\n\t\t\"products\" : {\n\t\t\t\"87d9431a-785a-4b13-a3fb-d148bb3ac049\" : 0\n\t\t}\n\t}\n}"
+								},
+								"url": {
+									"raw": "https://ae6p34jr9l.execute-api.eu-west-3.amazonaws.com/dev/basket",
+									"protocol": "https",
+									"host": [
+										"ae6p34jr9l",
+										"execute-api",
+										"eu-west-3",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"dev",
+										"basket"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 15:10:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "314c26bf-013f-4173-878a-40631aa65ab7"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "WmfQ5FaBiGYFbFQ="
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-62f278d2-14ff03970161be7958f84a1c;Sampled=0"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"updated successfully\",\n    \"error\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "List all products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\" : {\n\t\t\"products\" : [\n\t\t]\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://ae6p34jr9l.execute-api.eu-west-3.amazonaws.com/dev/products",
+							"protocol": "https",
+							"host": [
+								"ae6p34jr9l",
+								"execute-api",
+								"eu-west-3",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get some products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\" : {\n\t\t\"products\" : [\n\t\t\t\"2a0409db-cedd-4a92-8744-7aff35b2054d\"\n\t\t]\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://ae6p34jr9l.execute-api.eu-west-3.amazonaws.com/dev/products",
+							"protocol": "https",
+							"host": [
+								"ae6p34jr9l",
+								"execute-api",
+								"eu-west-3",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"data\" : {\n\t\t\"products\" : [\n\t\t\t\"2a0409db-cedd-4a92-8744-7aff35b2054d\"\n\t\t]\n\t}\n}"
+								},
+								"url": {
+									"raw": "https://ae6p34jr9l.execute-api.eu-west-3.amazonaws.com/dev/products",
+									"protocol": "https",
+									"host": [
+										"ae6p34jr9l",
+										"execute-api",
+										"eu-west-3",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"dev",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 14:35:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "343"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "c71bad8b-db6a-48aa-a34c-219a455b6ede"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "WmaHJEpsiGYFe3A="
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-62f27093-497fd902533e981927dfb472;Sampled=0"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"products\": [\n            {\n                \"product_name\": \"Small Wooden Chicken\",\n                \"product_id\": \"2a0409db-cedd-4a92-8744-7aff35b2054d\",\n                \"product_desc\": \"Dolores corporis amet consequatur neque. Perspiciatis odio non voluptas id ut. Est magnam possimus est vero enim.\",\n                \"product_price\": 491,\n                \"picture_path\": \"/product/2a0409db-cedd-4a92-8744-7aff35b2054d/cover_picture\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get cover picture from product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true,
+							"accept-encoding": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "k7y5cUuAh97MBSZsSGbJK35VZz32qsjS75p4jjka",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "image/jpeg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://ae6p34jr9l.execute-api.eu-west-3.amazonaws.com/dev/product/{{product_id}}/cover_picture",
+							"protocol": "https",
+							"host": [
+								"ae6p34jr9l",
+								"execute-api",
+								"eu-west-3",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"product",
+								"{{product_id}}",
+								"cover_picture"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

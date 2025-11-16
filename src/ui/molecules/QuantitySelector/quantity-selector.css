@@ -1,0 +1,22 @@
+.quantity-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .quantity-selector-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .quantity-action {
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border: none;
+      border-radius: 5px;
+    }
+  }
+}
