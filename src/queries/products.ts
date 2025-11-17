@@ -1,10 +1,10 @@
 import type { Product } from 'src/stores/product'
 
 export const fetchProducts = async (): Promise<Product[]> => {
-  const res = await fetch(`${import.meta.env.PUBLIC_BASE_URL}/products`, {
+  const res = await fetch(`${process.env.BASE_URL}/products`, {
     method: 'POST',
     headers: {
-      'x-api-key': import.meta.env.PUBLIC_API_KEY,
+      'x-api-key': process.env.API_KEY as string,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({

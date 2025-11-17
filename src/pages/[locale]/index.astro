@@ -2,10 +2,10 @@
 import { VALID_LOCALES, getLocaleOrDefault, getLanguageFromLocale } from 'src/config'
 import { localeStore } from 'src/stores/locale'
 import { Grid } from 'src/ui/molecules/Grid'
-import { Cart } from 'src/ui/organisms/Cart'
+import { Cart } from 'src/components/react/Cart'
+import { fetchProducts } from 'src/queries/products'
 
 import 'src/styles/main.css'
-import { fetchProducts } from 'src/queries/products'
 
 export function getStaticPaths() {
   return VALID_LOCALES.map((locale) => ({
@@ -49,8 +49,9 @@ const products = await fetchProducts()
     <!-- Hydrated client side -->
     <Cart client:load />
 
-    <!-- Handle card click adding item -->
-    <script type="module">
+    <script type="module" is:inline>
+      // Handle card click adding item
+      // Since the product grid is generated, no even handler is attached by default
       document.querySelectorAll('.card').forEach((el) => {
         el.addEventListener('click', () => {
           const id = el.dataset.id

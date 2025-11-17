@@ -36,11 +36,8 @@ export const LargeNumber: Story = {
 }
 
 export const EnUSLocale: Story = {
-  render: (args) => {
-    localeStore.setState({ locale: 'en-US' })
-    return <Price {...args} />
-  },
   args: {
     price: 1234.56,
+    locale: 'en-US',
   },
 }

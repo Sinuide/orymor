@@ -32,10 +32,10 @@ export const POST: APIRoute = async ({ request }) => {
       },
     }
 
-    const res = await fetch(`${import.meta.env.PUBLIC_BASE_URL}/basket`, {
+    const res = await fetch(`${process.env.BASE_URL}/basket`, {
       method: 'POST',
       headers: {
-        'x-api-key': import.meta.env.PUBLIC_API_KEY,
+        'x-api-key': process.env.API_KEY as string,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),

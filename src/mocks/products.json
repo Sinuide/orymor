@@ -1,0 +1,76 @@
+{
+  "data": {
+    "products": [
+      {
+        "product_name": "Quantum Banana Deluxe",
+        "product_id": "a1d2c3b4-0001-42aa-9999-111111111111",
+        "product_desc": "Une banane qui existe simultanément mûre, trop mûre et pas mûre. Idéale pour les petits-déjeuners quantiques.",
+        "product_price": 42,
+        "picture_path": "/product/a1d2c3b4-0001-42aa-9999-111111111111/cover_picture"
+      },
+      {
+        "product_name": "Chaise Antigravité Mk.2",
+        "product_id": "a1d2c3b4-0002-42aa-9999-222222222222",
+        "product_desc": "Une chaise qui flotte à 3 cm du sol. Ne supporte pas les chats.",
+        "product_price": 1999,
+        "picture_path": "/product/a1d2c3b4-0002-42aa-9999-222222222222/cover_picture"
+      },
+      {
+        "product_name": "T-shirt Invisible (taille unique)",
+        "product_id": "a1d2c3b4-0003-42aa-9999-333333333333",
+        "product_desc": "Parfait pour ceux qui veulent être stylés tout en n’ayant rien sur le dos.",
+        "product_price": 0,
+        "picture_path": "/product/a1d2c3b4-0003-42aa-9999-333333333333/cover_picture"
+      },
+      {
+        "product_name": "Gaufre de Combat +5 endurance",
+        "product_id": "a1d2c3b4-0004-42aa-9999-444444444444",
+        "product_desc": "Forgee dans un grille-pain ancestral. Croustillante, mais dangereuse.",
+        "product_price": 7,
+        "picture_path": "/product/a1d2c3b4-0004-42aa-9999-444444444444/cover_picture"
+      },
+      {
+        "product_name": "Oreiller qui insulte ton ex",
+        "product_id": "a1d2c3b4-0005-42aa-9999-555555555555",
+        "product_desc": "À chaque pression, génère une insulte aléatoire en 27 langues.",
+        "product_price": 69,
+        "picture_path": "/product/a1d2c3b4-0005-42aa-9999-555555555555/cover_picture"
+      },
+      {
+        "product_name": "Chaussette Paradoxale (1 chaussette, 2 pieds)",
+        "product_id": "a1d2c3b4-0006-42aa-9999-666666666666",
+        "product_desc": "S’adapte simultanément au pied gauche et au pied droit. Déconseillée aux personnes rationnelles.",
+        "product_price": 13,
+        "picture_path": "/product/a1d2c3b4-0006-42aa-9999-666666666666/cover_picture"
+      },
+      {
+        "product_name": "Lampe à Anxiété Ajustable",
+        "product_id": "a1d2c3b4-0007-42aa-9999-777777777777",
+        "product_desc": "Plus elle éclaire, plus vous doutez de vos choix de vie.",
+        "product_price": 120,
+        "picture_path": "/product/a1d2c3b4-0007-42aa-9999-777777777777/cover_picture"
+      },
+      {
+        "product_name": "Mug Thermos ‘Toujours Tiède’",
+        "product_id": "a1d2c3b4-0008-42aa-9999-888888888888",
+        "product_desc": "Ne chauffe jamais, ne refroidit jamais. Parfaitement… tiède. Constamment.",
+        "product_price": 25,
+        "picture_path": "/product/a1d2c3b4-0008-42aa-9999-888888888888/cover_picture"
+      },
+      {
+        "product_name": "Crayon qui écrit le futur",
+        "product_id": "a1d2c3b4-0009-42aa-9999-999999999999",
+        "product_desc": "Attention : peut provoquer des paradoxes temporels mineurs.",
+        "product_price": 314,
+        "picture_path": "/product/a1d2c3b4-0009-42aa-9999-999999999999/cover_picture"
+      },
+      {
+        "product_name": "Sac Banane Édition Multivers",
+        "product_id": "a1d2c3b4-0010-42aa-9999-aaaaaaaaaaaa",
+        "product_desc": "Peut contenir 2 objets… ou 2 000, selon l’univers dans lequel vous vous trouvez.",
+        "product_price": 87,
+        "picture_path": "/product/a1d2c3b4-0010-42aa-9999-aaaaaaaaaaaa/cover_picture"
+      }
+    ]
+  }
+}

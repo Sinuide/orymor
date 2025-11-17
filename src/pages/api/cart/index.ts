@@ -8,16 +8,13 @@ export const GET: APIRoute = async () => {
   const user = 'orymor'
 
   try {
-    const res = await fetch(
-      `${import.meta.env.PUBLIC_BASE_URL}/basket/${user}`,
-      {
-        method: 'GET',
-        headers: {
-          'x-api-key': import.meta.env.PUBLIC_API_KEY,
-          'Content-Type': 'application/json',
-        },
+    const res = await fetch(`${process.env.BASE_URL}/basket/${user}`, {
+      method: 'GET',
+      headers: {
+        'x-api-key': process.env.API_KEY as string,
+        'Content-Type': 'application/json',
       },
-    )
+    })
 
     if (!res.ok) {
       return new Response(

@@ -13,10 +13,11 @@ The others are more basic choices.
 
 - Storybook: This one is my default go to anytime I need to develop some UI. Nothing is better than it for this job. Even more with Figma integrated. The axe integration for a11y testing is very nice too.
 - Vite, vitest: Vite is the default choice with Astro, but even without it, it trumps webpack on everything ES6. Same with vitest, config without astro is just a comment in vite.config, and even with a vitest.config its quite easy to setup and use.
-- Atomic design: The UI is divided according to atomic design rules. I didn't add templates and pages, mostly because they were not very useful here. A template would have been nice to define how to organize the product grid + cart, but all that is done directly in the astro page.
+- Atomic design: The UI is divided according to atomic design rules. I didn't add templates and pages, mostly because they were not very useful here. A template would have been nice to define how to organize the product grid + cart, but all that is done directly in the astro page. And one big warning.
 - i18n: I started by handling locale in pathname, wanted to add some i18next for handling translations, but since I had like 3 entries.. It seemed like another waste of time. The pathname locale was fun though, since I never tried that before.
 - Native CSS: Aside from mixins, native CSS can now do absolutely anything we need, so no reason to use anything else. And since I actually do like CSS, Tailwind is my nemesis.
 - Responsive: Not much here, the approach is mobile first, with a reponsive grid and a hidden cart.
+- MSW: Some mocking capabilities for local development. More of a showcase, api works fine.
 
 In general, I tried to add a bit of everything in this project, I did quite a bit of rewriting as I progressed in my exploration of astro. All stores are not equal (only products has a separated query, partly due to its need in SSG and Client) 😅
 
@@ -27,7 +28,6 @@ The following are things I wanted to add but didn't have the time yet:
 - Github Actions for testing
 - E2E testing, playwright is setup though
 - Testing-library same as playwright
-- Netlify for some nice deployment
 
 ---
 
@@ -55,6 +55,12 @@ Orymor is a modern web application built using [Astro](https://astro.build/) and
 ## Astro
 
 [Astro](https://docs.astro.build/)
+
+Astro is a relatively new framework to handle server side generation. The usage is quite simple:
+
+- `astro dev` is SSR
+- `astro build` is SSG with islands
+  The deployed version is SSG, to have the best performances.
 
 ---
 

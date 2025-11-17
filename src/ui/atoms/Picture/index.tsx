@@ -3,8 +3,7 @@ import { classNames } from 'src/utils/classNames'
 import './picture.css'
 
 export type PictureProps = {
-  src?: string
-  id?: string
+  src: string
   alt?: string
   loading?: 'lazy' | 'eager'
   className?: string
@@ -14,7 +13,6 @@ export type PictureProps = {
 // Could be used to define a <picture> with <sources> if multiple images are available
 // Mostly helpful for responsive
 export const Picture: React.FC<PictureProps> = ({
-  id,
   src,
   alt,
   loading = 'lazy',
@@ -22,7 +20,7 @@ export const Picture: React.FC<PictureProps> = ({
 }) => (
   <img
     className={classNames('picture', className)}
-    src={src ?? `/api/image/${id}`}
+    src={src}
     alt={alt}
     loading={loading}
   />

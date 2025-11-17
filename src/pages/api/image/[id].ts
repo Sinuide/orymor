@@ -8,10 +8,10 @@ export const GET: APIRoute = async ({ params }) => {
   const id = params.id
 
   const res = await fetch(
-    `${import.meta.env.PUBLIC_BASE_URL}/product/${id}/cover_picture`,
+    `${process.env.BASE_URL}/product/${id}/cover_picture`,
     {
       headers: {
-        'x-api-key': import.meta.env.PUBLIC_API_KEY,
+        'x-api-key': process.env.API_KEY as string,
         Accept: 'image/jpeg',
       },
     },
