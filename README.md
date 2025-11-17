@@ -35,34 +35,39 @@ Orymor is a modern web application built using [Astro](https://astro.build/) and
 
 ---
 
-## What’s Inside?
-
-- **Astro**: The core framework used for rendering the site and integrating with React components.
-- **React**: Used for dynamic and interactive UI elements (like the cart).
-- **Zustand**: State management for the cart and shared UI state.
-- **Bruno**: API request collection and testing tool. Prebuilt workspace files allow you to query endpoints easily, using the same environment keys as the API routes.
-- **API Endpoints**: Custom endpoints for cart manipulation and image handling:
-  - `/api/cart` (`/api/cart/get`, `/api/cart/update`)
-  - `/api/image`
-- **Storybook**: UI component explorer and documentation.
-- **Testing**: Vitest + Testing Library for unit and component testing.
-- **Prettier & ESLint**: Code formatting and linting.
-
----
-
 ## Astro
 
 [Astro](https://docs.astro.build/)
 
 Astro is a relatively new framework to handle server side generation. The usage is quite simple:
 
-- `astro dev` is SSR
-- `astro build` is SSG with islands
-  The deployed version is SSG, to have the best performances.
+- `astro dev` is SSR for local development
+- `astro build` is SSG with islands for deployment
+
+The usage implies separating static and dynamic content. Mostly by setting the `client:xxx` directive on components which needs to be available on client.  
+By default, everything is rendered on the server.
+
+Astro uses the same principle as NextJS, with folder structure as path.
+
+---
+
+## Components organisation
+
+The components are separated in 3 distinct parts:
+
+- `src/ui` is used as a design system. Every component is first defined here, without business logic. It's simple HTML, CSS and local state.
+- `src/components` is where the app lives. It's the components linked to the app state, and the ones to use. It should be divided between `src/components/react` and `src/components/astro`, but I didn't need any particular one for Astro.
+- `src/pages` is the pages themselves. I could theoratically have defined pages in DS first, then just called them here, but since I had only one page..
+
+### API Routes
+
+Those are different kind of pages. Astro allows us to define some api calls with page. The main difference aside from being only typescript, is the `export const prerender = false` to tell Astro "do not pre render these at dev/build time".
 
 ---
 
 ## API Usage
+
+Every api call is proxied in an Astro API Route. It helps keep data consistent with the frontend needs, and prevents any CORS errors. Quite helpful for the image header too.
 
 ### `/api/cart`
 
@@ -82,9 +87,31 @@ The store logic ensures updates to the cart are reflected on the server automati
 - Dynamically proxies and/or optimizes remote images as needed.
 - Use this route to serve images, ensuring they're correctly handled by Astro's image system.
 
+### `/api/products`
+
+- `GET /api/products`
+- Since we get every products (no pagination here) it replaces the need for a POST and serve all products.
+- If needed, some pagination could be added here depending on the API capabilities. Either by caching all products and returning part, or setting a custom page path param.
+
+> A query folder is available for shared resources. Astro cannot call its own endpoint during prerender. Products query is needed both in server and client.
+
+> A `bruno` folder is available to document and test api calls.
+
+---
+
+## Zustand
+
+Zustand is used as the state manager here. Its main purpose is to keep the global state of the app, and be usable either on server or client side.  
+Stores are defined to be agnostic of framework, and a hook is defined specifically for React in each store.  
+React context where not a good choice IMO since they require a provider every time. Zustand store can be used anywhere, in any components. Since Astro use islands and not a full mounted app, it was the best choice IMO.
+
+> Didn't do much with the locale, it helped me learn what could go from server to client and how to use astro middleware. Not very useful as is. Could have been interesting with some i18n and langage selector.
+
 ---
 
 ## Scripts & Commands
+
+> ⚠️ You need to configure your `.env` first if you want to use the app. A `.env.sample` is available for structure. `API_KEY` is the provided `x-api-key`, `BASE_URL` is the api url including `/dev`
 
 Run these via `npm` (e.g., `npm run dev`):
 
@@ -114,6 +141,12 @@ Run these via `npm` (e.g., `npm run dev`):
   ```bash
   npm test
   ```
+
+---
+
+## MSW
+
+You can also use mocks if you want to test it offline, a `.env.sample` is provided with minimal configuration. For mocks, just set `USE_MOCK=true` and start the app.
 
 ---
 
