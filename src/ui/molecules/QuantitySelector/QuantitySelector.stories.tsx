@@ -5,11 +5,6 @@ import { QuantitySelector } from './index'
 const meta: Meta<typeof QuantitySelector> = {
   title: 'Molecules/QuantitySelector',
   component: QuantitySelector,
-  args: {
-    add: () => console.log('added!'),
-    remove: () => console.log('removed!'),
-    quantity: 3,
-  },
 }
 export default meta
 

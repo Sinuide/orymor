@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Grid, type GridProps } from '.'
-import type { CardProps } from '../Card'
+import { Grid, type GridProps } from './index'
 
 const meta: Meta<typeof Grid> = {
   title: 'Molecules/Grid',
