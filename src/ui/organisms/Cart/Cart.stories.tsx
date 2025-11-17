@@ -14,6 +14,7 @@ export const Default: StoryObj<typeof Cart> = {
   args: {
     items: [
       <CartItem
+        key="Quantum Banana Deluxe"
         name="Quantum Banana Deluxe"
         price={42}
         picture="https://placecats.com/300/400"
@@ -22,6 +23,7 @@ export const Default: StoryObj<typeof Cart> = {
         remove={() => console.log('removed Quantum Banana Deluxe')}
       />,
       <CartItem
+        key="Chaise Antigravité Mk.2"
         name="Chaise Antigravité Mk.2"
         price={1999}
         picture="https://placecats.com/300/400"
@@ -30,6 +32,7 @@ export const Default: StoryObj<typeof Cart> = {
         remove={() => console.log('removed Chaise Antigravité Mk.2')}
       />,
       <CartItem
+        key="T-shirt Invisible (taille unique)"
         name="T-shirt Invisible (taille unique)"
         price={42}
         picture="https://placecats.com/300/400"
