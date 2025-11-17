@@ -32,7 +32,7 @@ export default defineConfig({
       },
     },
     optimizeDeps: {
-      include: ['msw', 'zustand', 'zustand/vanilla', 'react/jsx-dev-runtime'],
+      include: ['msw'],
     },
     plugins: [
       {

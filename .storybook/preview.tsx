@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react-vite'
-import React from 'react'
-import { act } from 'react-dom/test-utils'
+import React, { act } from 'react'
 
 import '../src/styles/main.css'
 
