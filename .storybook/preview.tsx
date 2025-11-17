@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react-vite'
 import React from 'react'
+import { act } from 'react-dom/test-utils'
 
 import '../src/styles/main.css'
 
@@ -20,11 +21,13 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (
-      <React.StrictMode>
-        <Story />
-      </React.StrictMode>
-    ),
+    (Story) => {
+      let el: React.ReactElement
+      act(() => {
+        el = <Story />
+      })
+      return el!
+    },
   ],
 }
 
