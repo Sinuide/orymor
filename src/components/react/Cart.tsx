@@ -25,9 +25,7 @@ export const Cart: React.FC = () => {
 
   const handleAdd = (event: any) => {
     const productId = event.detail.id
-    if (!items.some((item) => item.id === productId && item.quantity > 0)) {
-      add(productId)
-    }
+    add(productId)
   }
 
   useEffect(() => {

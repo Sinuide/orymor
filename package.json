@@ -11,8 +11,7 @@
     "build-storybook": "storybook build",
     "test": "vitest",
     "test:unit": "vitest run --project unit",
-    "test:storybook": "vitest run --project storybook",
-    "test:watch": "vitest --watch"
+    "test:storybook": "vitest run --project storybook"
   },
   "dependencies": {
     "@astrojs/netlify": "^6.6.0",

@@ -32,7 +32,7 @@ const products = await fetchProducts()
     <title>Orymor</title>
   </head>
   <body>
-    <!-- No client:directive, will be renderer in SSG -->
+    <!-- No client:directive, will be renderer in SSG (build)/SSR (dev) -->
     <Grid items={products.map(product => ({
       id: product.id,
       content: {
@@ -41,7 +41,7 @@ const products = await fetchProducts()
         price: product.price
       },
       picture: {
-        src: product.cover,
+        src: `/api/image/${product.id}`,
         alt: product.name
       }
     }))} />

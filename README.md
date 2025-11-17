@@ -25,9 +25,7 @@ In general, I tried to add a bit of everything in this project, I did quite a bi
 
 The following are things I wanted to add but didn't have the time yet:
 
-- Github Actions for testing
 - E2E testing, playwright is setup though
-- Testing-library same as playwright
 
 ---
 
@@ -100,7 +98,6 @@ Run these via `npm` (e.g., `npm run dev`):
 | `test`            | Run all tests (Vitest)             |
 | `test:unit`       | Run only unit tests                |
 | `test:storybook`  | Test Storybook components          |
-| `test:watch`      | Watch mode for tests               |
 | `astro`           | All-purpose Astro CLI              |
 
 ### Examples
